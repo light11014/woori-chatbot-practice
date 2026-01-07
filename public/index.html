@@ -9,18 +9,21 @@
     <script defer src="app.js"></script>
   </head>
   <body>
-    <div class="chat-container">
-<<<<<<< Updated upstream
-      <div class="chat-list">
-        <div class="chat-item"></div>
-=======
-      <div class="output">
-        <div class="output-item"></div>
->>>>>>> Stashed changes
-      </div>
-      <div class="input">
-        <textarea id="inputTextarea"></textarea>
-        <button id="sendButton">보내기</button>
+    <div class="app">
+      <header>HEADER</header>
+      <div class="chat-container">
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+          <textarea
+            id="input-textarea"
+            rows="1"
+            placeholder="메시지를 입력하세요"
+          ></textarea>
+          <button class="icon-btn" id="send-btn">
+            SEND
+            <!-- <img src="/img/send-btn.webp" alt="전송" /> -->
+          </button>
+        </div>
       </div>
     </div>
   </body>
