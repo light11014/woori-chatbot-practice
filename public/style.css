@@ -1,4 +1,5 @@
 :root {
+
   --woori-whtie: #ffffff;
   --woori-light-blue: #20c4f4;
   --woori-blue: rgb(0, 131, 202);
@@ -7,75 +8,82 @@
 }
 
 * {
-  box-sizing: border-box;
-  font-size: 20px;
+    box-sizing: border-box;
+    font-size: 20px;
 }
 
 html,
 body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 .app {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 12px;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 0; /* 여백 제거 */
+    margin: 0;
+    background: radial-gradient(circle at top right, #1e293b, #080c14);
+    overflow: hidden;
 
-  background: white;
-  /* background: linear-gradient(
-    0,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(32, 196, 244, 1) 50%,
-    rgba(0, 131, 202, 1) 100%
-  ); */
 }
 
 header {
-  text-align: center;
-  height: 56px;
-  flex-shrink: 0;
+    text-align: center;
+    height: 56px;
+    flex-shrink: 0;
 }
 
 .chat-container {
-  flex: 1;
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+    flex: 1; /* 남은 공간 모두 차지 */
+    width: 100%;
+    height: 100%;
+    max-width: none; /* 너비 제한 해제 */
+
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(30px);
+    border: none; /* 전체화면일 땐 테두리가 없는 게 깔끔함 */
+    border-radius: 0; /* 모서리 둥글기 제거 */
+
+    display: flex;
+    flex-direction: column;
 }
 
 /* 채팅 */
 .chat-messages {
-  flex: 1;
-  overflow-y: auto;
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px;
 }
 
 .message {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  margin: 6px 0;
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin: 6px 0;
 }
 
 .bubble {
-  padding: 8px 12px;
-  border-radius: 14px;
-  line-height: 1.4;
-  word-break: break-word;
-  background-color: #9aa6b2;
+    max-width: 70%;
+    padding: 8px 12px;
+    border-radius: 14px;
+    line-height: 1.4;
+    word-break: break-word;
+
 }
 
 .message.user {
-  justify-content: flex-end;
+    justify-content: flex-end;
 }
 
 .message.bot {
+    justify-content: flex-start;
+
   justify-content: flex-start;
   display: flex;
   flex-direction: column;
@@ -97,46 +105,99 @@ header {
 
 /* 입력 */
 .chat-input {
-  border: 1px solid var(--color-border);
-  padding: 10px;
-  background: #fff;
-  display: flex;
-  height: auto;
-
-  border-radius: 15px;
+    margin: 20px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 8px 15px;
+    display: flex;
+    align-items: center;
 }
 
 #input-textarea {
-  width: 100%;
-  resize: none;
-  overflow: hidden;
-  line-height: 1.4;
-  padding: 8px;
-  border: none;
-  outline: none;
+    background: transparent;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex: 1;
+    overflow: hidden;
+}
+
+#input-textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
 }
 
 /* 버튼 */
 .icon-btn {
-  width: auto;
-  height: 100%;
-  border: none;
-  /* background: transparent; */
-  padding: 10px;
-  cursor: pointer;
+    background: transparent;
+    color: var(--woori-light-blue);
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.2s;
 }
 
 .icon-btn img {
-  width: 24px;
-  height: 24px;
-  display: block;
+    width: 24px;
+    height: 24px;
+    display: block;
 }
 
 /* 자동 완성 */
 .auto-complete-container {
-  margin: 10px;
-  background-color: var(--color-border);
-  overflow: scroll;
-  max-height: 10%;
-  height: auto;
+    margin: 10px;
+    background-color: var(--color-border);
+}
+
+.glass-card {
+    width: fit-content;
+    max-width: 75%;
+    height: auto;
+    padding: 14px 20px;
+    margin: 8px 0; /* 말풍선 사이 간격 */
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.08); /* 테두리 더 연하게 */
+    border-radius: 20px;
+    color: white;
+    position: relative;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* 3. 너무 강했던 왼쪽/위쪽 선 약화 (불투명도 조절) */
+.glass-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    /* [수정] 0.8이었던 값을 0.3으로 낮춰 은은한 하이라이트만 남김 */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+}
+
+.glass-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    /* [수정] 0.8이었던 값을 0.2 정도로 낮춤 */
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.3),
+        transparent,
+        rgba(255, 255, 255, 0.1)
+    );
+
 }
