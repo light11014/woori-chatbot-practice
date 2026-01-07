@@ -20,7 +20,7 @@ const sendMessage = async (message) => {
                 })
             }
         );
-
+        
         const data = await response.json();
         return data.description; // TODO : 추후 확인 필요
     } catch(error) {

@@ -1,4 +1,54 @@
-.input, .result {
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+.result {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.chat-container {
+  height: 100%;
+}
+=======
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+=======
+>>>>>>> Stashed changes
+.output {
     display: flex;
     justify-content: center;
 }
+
+html, body {
+    height: 100%
+}
+
+.chat-container {
+    height: 100%;
+}
+
+.input {
+    
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
+}
+>>>>>>> Stashed changes
+=======
+}
+>>>>>>> Stashed changes
+=======
+}
+>>>>>>> Stashed changes
