@@ -1,3 +1,10 @@
+:root {
+  --woori-whtie: #ffffff;
+  --woori-light-blue: rgb(32, 196, 244);
+  --woori-blue: rgb(0, 131, 202);
+  --color-border: #9aa6b2;
+}
+
 * {
   box-sizing: border-box;
   font-size: 20px;
@@ -13,6 +20,7 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
+  padding: 12px;
 }
 
 header {
@@ -29,11 +37,11 @@ header {
   flex-direction: column;
 }
 
+/* 채팅 */
 .chat-messages {
   flex: 1;
   overflow-y: auto;
   height: 100%;
-  padding: 12px;
 
   display: flex;
   flex-direction: column;
@@ -54,6 +62,28 @@ header {
   justify-content: flex-start;
 }
 
+/* 입력 */
+.chat-input {
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  background: #fff;
+  display: flex;
+  height: auto;
+
+  border-radius: 15px;
+}
+
+#input-textarea {
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.4;
+  padding: 8px;
+  border: none;
+  outline: none;
+}
+
+/* 버튼 */
 .icon-btn {
   width: auto;
   height: 100%;
@@ -69,20 +99,8 @@ header {
   display: block;
 }
 
-.chat-input {
-  border-top: 1px solid #ddd;
-  padding: 10px;
-  background: #fff;
-  display: flex;
-  height: auto;
-}
-
-#input-textarea {
-  width: 100%;
-  resize: none;
-  overflow: hidden;
-  line-height: 1.4;
-  padding: 8px;
-  border: none;
-  outline: none;
+/* 자동 완성 */
+.auto-complete-container {
+  margin: 10px;
+  background-color: var(--color-border);
 }

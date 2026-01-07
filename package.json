@@ -2,22 +2,22 @@
     "name": "05_woori-chatbot",
     "version": "1.0.0",
     "description": "-   챗봇 API 서버 연동 -   화면 구현 -   Node.js -   웹뷰",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "keywords": [],
+    "homepage": "https://github.com/seonjiwon/woori-chatbot-practice#readme",
+    "bugs": {
+        "url": "https://github.com/seonjiwon/woori-chatbot-practice/issues"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/seonjiwon/woori-chatbot-practice.git"
     },
-    "keywords": [],
-    "author": "",
     "license": "ISC",
+    "author": "",
     "type": "module",
-    "bugs": {
-        "url": "https://github.com/seonjiwon/woori-chatbot-practice/issues"
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "homepage": "https://github.com/seonjiwon/woori-chatbot-practice#readme",
     "dependencies": {
         "dotenv": "^17.2.3",
         "express": "^5.2.1",
