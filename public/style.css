@@ -1,216 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
 :root {
-    --woori-whtie: #ffffff;
-    --woori-light-blue: #20c4f4;
-    --woori-blue: rgb(0, 131, 202);
-    --color-border: #9aa6b2;
-    --color-keyword: #adadad;
+  --woori-whtie: #ffffff;
+  --woori-light-blue: #20c4f4;
+  --woori-blue: rgb(0, 131, 202);
+  --color-border: #9aa6b2;
+  --color-keyword: #adadad;
 }
 
 * {
-    box-sizing: border-box;
-    font-size: 20px;
+  box-sizing: border-box;
+  font-size: 20px;
+
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 html,
 body {
-    height: 100vh;
-    margin: 0;
+  height: 100vh;
+  margin: 0;
 }
 
 .app {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding: 0; /* 여백 제거 */
-    margin: 0;
-    background: radial-gradient(circle at top right, #1e293b, #080c14);
-    overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  padding: 0; /* 여백 제거 */
+  margin: 0;
+  background: radial-gradient(circle at top right, #1e293b, #080c14);
+  overflow: hidden;
 }
 
 header {
-    text-align: center;
-    height: 56px;
-    flex-shrink: 0;
+  text-align: center;
+  height: 56px;
+  flex-shrink: 0;
 }
 
 .chat-container {
-    flex: 1; /* 남은 공간 모두 차지 */
-    width: 100%;
-    height: 90%;
-    max-width: none; /* 너비 제한 해제 */
+  flex: 1; /* 남은 공간 모두 차지 */
+  width: 100%;
+  height: 90%;
+  max-width: none; /* 너비 제한 해제 */
 
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(30px);
-    border: none; /* 전체화면일 땐 테두리가 없는 게 깔끔함 */
-    border-radius: 0; /* 모서리 둥글기 제거 */
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(30px);
+  border: none; /* 전체화면일 땐 테두리가 없는 게 깔끔함 */
+  border-radius: 0; /* 모서리 둥글기 제거 */
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 채팅 */
 .chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 24px;
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 24px;
 }
 
 .message {
-    display: flex;
-    width: 100%;
-    height: auto;
-    margin: 6px 0;
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: 6px 0;
 }
 
 .bubble {
-    max-width: 70%;
-    padding: 8px 12px;
-    border-radius: 14px;
-    line-height: 1.4;
-    word-break: break-word;
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 14px;
+  line-height: 1.4;
+  word-break: break-word;
 }
 
 .message.user {
-    justify-content: flex-end;
+  justify-content: flex-end;
 }
 
 .message.bot {
-    justify-content: flex-start;
+  justify-content: flex-start;
 
-    justify-content: flex-start;
-    display: flex;
-    flex-direction: column;
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: column;
 }
 
 .keywords {
-    width: 100%;
-    overflow: hidden;
-    margin-top: 6px;
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 6px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
 .keyword {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 6px 10px;
-    border-radius: 20px;
-    color: white;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
 .keyword:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: var(--woori-light-blue);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--woori-light-blue);
 }
 
 /* 입력 */
 .chat-input {
-    margin: 0px 20px 20px 20px;
-    background: rgba(255, 255, 255, 0.06);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    padding: 8px 15px;
-    display: flex;
-    align-items: center;
+  margin: 0px 20px 20px 20px;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 8px 15px;
+  display: flex;
+  align-items: center;
 }
 
 #input-textarea {
-    background: transparent;
-    color: white;
-    border: none;
-    outline: none;
-    padding: 10px;
-    flex: 1;
-    overflow: hidden;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  flex: 1;
+  overflow: hidden;
 }
 
 #input-textarea::placeholder {
-    color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
 }
 
 /* 버튼 */
 .icon-btn {
-    background: transparent;
-    color: rgba(255, 255, 255, 0.6); /* 연한 회색 */
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: all 0.2s;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.6); /* 연한 회색 */
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s;
 }
 
 .icon-btn:hover {
-    color: var(--woori-light-blue); /* 호버 시에만 파란색 */
+  color: var(--woori-light-blue); /* 호버 시에만 파란색 */
 }
 
 .icon-btn img {
-    width: 24px;
-    height: 24px;
-    display: block;
+  width: 24px;
+  height: 24px;
+  display: block;
 }
 
 .glass-card {
-    width: fit-content;
-    max-width: 75%;
-    height: auto;
-    padding: 14px 20px;
-    margin: 8px 0; /* 말풍선 사이 간격 */
+  width: fit-content;
+  max-width: 75%;
+  height: auto;
+  padding: 14px 20px;
+  margin: 8px 0; /* 말풍선 사이 간격 */
 
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.08); /* 테두리 더 연하게 */
-    border-radius: 20px;
-    color: white;
-    position: relative;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.08); /* 테두리 더 연하게 */
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
 }
 
 /* 자동 완성 */
 .auto-complete-container {
-    margin: 10px 24px;
-    max-height: 10vh; /* 화면의 10% */
-    height: auto;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 10px 24px;
+  max-height: 10%; /* 화면의 10% */
+  height: auto;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 
-    padding: 10px;
-    display: flex;
-    flex-direction: column; /* 세로 정렬 */
-    gap: 6px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* 세로 정렬 */
+  gap: 6px;
 
-    overflow-y: auto;
-    list-style: none; /* 점 제거 */
+  overflow-y: auto;
+  list-style: none; /* 점 제거 */
 }
 
 .auto-complete-container:empty {
-    display: none;
+  display: none;
 }
 
 .auto-keyword {
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 10px 16px;
-    border-radius: 12px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    width: 100%; /* 한 줄 전체 차지 */
-    list-style: none; /* 점 제거 */
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 16px;
+  border-radius: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%; /* 한 줄 전체 차지 */
+  list-style: none; /* 점 제거 */
 }
 
 .auto-keyword:hover {
-    background: rgba(255, 255, 255, 0.15);
-    border-color: var(--woori-light-blue);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--woori-light-blue);
 }
