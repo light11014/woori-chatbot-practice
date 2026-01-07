@@ -1,5 +1,6 @@
 import express, { json } from "express";
 import { requestToSend } from "./dataProcessingService.js";
+import { callChatbot } from "./serverapi.js";
 
 const app = express();
 const PORT = 3000;
@@ -11,8 +12,11 @@ app.get("/", (_, response) => response.sendFile("index.html"));
 
 // 언어 감지
 app.post("/chat", async (request, response) => {
-    const description = request.body.description;
-    const result = await requestToSend(description);
+    const requestDescription = request.body.description;
+    const processedData = await requestToSend(requestDescription);
+
+    const result = await callChatbot(processedData);
+    console.log(result.bubbles[0].data.description);
     response.send(result);
 });
 
