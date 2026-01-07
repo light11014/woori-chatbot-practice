@@ -31,6 +31,13 @@ sendButton.addEventListener("click", async () => {
     keywordEvent();
 });
 
+inputTextarea.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+        event.preventDefault();
+        sendButton.click();
+    }
+});
+
 const sendMessage = async (message) => {
     try {
         // message 가 keywords 없으면 예외 발생
