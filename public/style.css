@@ -1,4 +1,4 @@
-.input {
+.input, .result {
     display: flex;
     justify-content: center;
 }
