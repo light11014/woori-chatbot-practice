@@ -12,8 +12,8 @@ app.get("/", (_, response) => response.sendFile("index.html"));
 // 언어 감지
 app.post("/chat", async (request, response) => {
     const description = request.body;
-    const result = requestToSend(description);
-    return result;
+    const result = await requestToSend(description);
+    response.send(result);
 });
 
 app.listen(PORT, () =>

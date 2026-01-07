@@ -1,6 +1,6 @@
-export async function requestToSend() {
+export async function requestToSend(description) {
     const data = {
-        description: description,
+        description,
     };
     return data;
 }
