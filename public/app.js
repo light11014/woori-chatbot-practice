@@ -1,5 +1,13 @@
+const inputTextarea = document.getElementById("inputTextarea");
+const resultTextarea = document.getElementById("resultTextarea");
+const sendButton = document.getElementById("sendButton");
+
+sendButton.addEventListener('click', async() => {
+    const result = await sendMessage(inputTextarea.value);
+    resultTextarea.value = result;
+})
+
 const sendMessage = async (message) => {
-    console.log('실행');
     try {
         const response = await fetch('/chat',
             {
@@ -14,9 +22,6 @@ const sendMessage = async (message) => {
         );
 
         const data = await response.json();
-        
-        console.log(data);
-
         return data.description; // TODO : 추후 확인 필요
     } catch(error) {
         console.error('채팅 오류:', error);
@@ -25,4 +30,5 @@ const sendMessage = async (message) => {
 } 
 
 
-sendMessage('hi');
+
+
