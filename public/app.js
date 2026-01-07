@@ -20,10 +20,10 @@ inputTextarea.addEventListener(
 );
 
 sendButton.addEventListener("click", async () => {
-  addMessage(inputTextarea.value, "user");
+  addUserMessage(inputTextarea.value, "user");
   const result = await sendMessage(inputTextarea.value);
   console.log(result);
-  addMessage(result.content, "bot");
+  addBotMessage(result);
   inputTextarea.value = "";
 });
 
@@ -52,9 +52,9 @@ const sendMessage = async (message) => {
 
 const chatMessages = document.querySelector(".chat-messages");
 
-function addMessage(text, type) {
+function addUserMessage(text) {
   const message = document.createElement("div");
-  message.classList.add("message", type); // user | bot
+  message.className = "message user";
 
   const bubble = document.createElement("div");
   bubble.classList.add("bubble");
@@ -64,6 +64,30 @@ function addMessage(text, type) {
   message.appendChild(bubble);
   chatMessages.appendChild(message);
   chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function addBotMessage(result) {
+  const message = document.createElement("div");
+  message.className = "message bot";
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble";
+  bubble.textContent = result.content;
+
+  const keywords = document.createElement("div");
+  keywords.className = "keywords";
+
+  result.keywords.forEach((word) => {
+    const span = document.createElement("span");
+    span.className = "keyword";
+    span.textContent = word;
+    keywords.appendChild(span);
+  });
+
+  message.appendChild(bubble);
+  message.appendChild(keywords);
+
+  chatMessages.appendChild(message);
 }
 
 const autoCompleteArea = document.querySelector(".auto-complete-container");
