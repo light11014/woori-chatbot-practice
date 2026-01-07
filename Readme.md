@@ -15,4 +15,10 @@
 
 -   POST "/chat"
     -   body {"description": text}
-    -   response {"description": "Chatbot Answer"}
+    -   ```
+        response {
+            "title": 제목,
+            "content" 내용,
+            "keywords": ["예금", "적금", "뭐"]
+                }
+        ```
