@@ -3,9 +3,10 @@ const sendButton = document.getElementById("send-btn");
 
 sendButton.addEventListener("click", async () => {
   addMessage(inputTextarea.value, "user");
-  inputTextarea.value = "";
   const result = await sendMessage(inputTextarea.value);
-  //   addMessage(result, "bot");
+  console.log(result);
+  addMessage(result.content, "bot");
+  inputTextarea.value = "";
 });
 
 const sendMessage = async (message) => {
@@ -21,7 +22,7 @@ const sendMessage = async (message) => {
     });
 
     const data = await response.json();
-    return data.description; // TODO : 추후 확인 필요
+    return data; // TODO : 추후 확인 필요
   } catch (error) {
     console.error("채팅 오류:", error);
     return null;
