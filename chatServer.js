@@ -17,16 +17,17 @@ app.post("/chat", async (request, response) => {
 
     const result = await callChatbot(processedData);
 
-    response = result.bubbles[0].data.description;
-    console.log("response:") + response;
-    const paredJson = JSON.parse(response);
-    console.log(paredJson);
-    console.log(paredJson.title);
-    console.log(paredJson.content);
-    console.log(paredJson.keyword);
-    console.log(paredJson.keyword[0]);
+    // response = result.bubbles[0].data.description;
+    // console.log("response:") + response;
+    // const paredJson = JSON.parse(response);
 
-    response.send(response);
+    // console.log(paredJson);
+    // console.log(paredJson.title);
+    // console.log(paredJson.content);
+    // console.log(paredJson.keywords);
+    // console.log(paredJson.keywords[0]);
+
+    response.send(result);
 });
 
 app.listen(PORT, () =>
