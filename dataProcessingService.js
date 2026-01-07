@@ -1,9 +1,10 @@
 export async function requestToSend(description) {
     const data = {
-        "type": "text",
-        "data" : { 
+        type: "text",
+        data: {
             description,
-        } 
+        },
     };
-    return data;
+
+    return bubble;
 }
