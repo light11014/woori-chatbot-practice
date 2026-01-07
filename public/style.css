@@ -41,6 +41,11 @@ header {
   flex-shrink: 0;
 }
 
+header > p {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+}
+
 .chat-container {
   flex: 1; /* 남은 공간 모두 차지 */
   width: 100%;
