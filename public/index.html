@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
 
-        <link rel="stylesheet" href="style.css" />
-        <script defer src="app.js"></script>
-        <script defer src="autoComplete.js"></script>
-    </head>
-    <body>
-        <div class="result">
-            <textarea id="resultTextarea"></textarea>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+    <script defer src="autoComplete.js"></script>
+  </head>
+  <body>
+    <div class="app">
+      <header>HEADER</header>
+      <div class="chat-container">
+        <div class="chat-messages"></div>
+        <div class="chat-input">
+          <textarea
+            id="input-textarea"
+            rows="1"
+            placeholder="메시지를 입력하세요"
+          ></textarea>
+          <button class="icon-btn" id="send-btn">
+            SEND
+            <!-- <img src="/img/send-btn.webp" alt="전송" /> -->
+          </button>
+
+        
+
         </div>
-        <div class="input">
-            <textarea id="inputTextarea"></textarea>
-            <button id="sendButton">보내기</button>
-        </div>
-    </body>
+      </div>
+    </div>
+  </body>
 </html>

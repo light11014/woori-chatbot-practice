@@ -1,4 +1,88 @@
-.input, .result {
-    display: flex;
-    justify-content: center;
+* {
+  box-sizing: border-box;
+  font-size: 20px;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  text-align: center;
+  height: 56px;
+  flex-shrink: 0;
+}
+
+.chat-container {
+  flex: 1;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  height: 100%;
+  padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  display: flex;
+  width: 100%;
+  height: 50px;
+  margin: 6px 0;
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.bot {
+  justify-content: flex-start;
+}
+
+.icon-btn {
+  width: auto;
+  height: 100%;
+  border: none;
+  /* background: transparent; */
+  padding: 10px;
+  cursor: pointer;
+}
+
+.icon-btn img {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+.chat-input {
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  background: #fff;
+  display: flex;
+  height: auto;
+}
+
+#input-textarea {
+  width: 100%;
+  resize: none;
+  overflow: hidden;
+  line-height: 1.4;
+  padding: 8px;
+  border: none;
+  outline: none;
 }
