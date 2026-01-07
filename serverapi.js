@@ -1,5 +1,10 @@
-const superagent = require('superagent');
-const crypto = require('crypto');
+import superagent from "superagent";
+import crypto from "crypto"
+import dotenv from "dotenv";
+
+dotenv.config();
+
+
 
 const CLOVA_CHATBOT_URL = (process.env.CLOVA_CHATBOT_URL || '').trim();
 const CLOVA_SECRET_KEY = (process.env.CLOVA_SECRET_KEY || '').trim();
@@ -16,13 +21,26 @@ function makeSignature(requestBodyString) {
         .digest('base64');
 }
 
-async function callChatbot(payload) {
+export async function callChatbot(payload) {
     assertEnv();
     if (!payload || typeof payload !== 'object') {
         throw new Error('payload must be a non-null object');
     }
 
-    const requestBodyString = JSON.stringify(payload);
+    console.log(payload)
+    const data = 
+                {
+                "version": "v2",
+                "userId": "test-user-001",
+                "userIp": "127.0.0.1",
+                "timestamp": 1736210000000,
+                "bubbles": [
+                    payload
+                ],
+                "event": "send"
+        }
+    
+    const requestBodyString = JSON.stringify(data);
     const signature = makeSignature(requestBodyString);
 
     const result = await superagent
@@ -36,4 +54,3 @@ async function callChatbot(payload) {
     return result.body;
 }
 
-module.exports = { callChatbot };

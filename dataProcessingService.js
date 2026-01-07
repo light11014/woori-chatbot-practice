@@ -1,6 +1,9 @@
 export async function requestToSend(description) {
     const data = {
-        description,
+        "type": "text",
+        "data" : { 
+            description,
+        } 
     };
     return data;
 }
