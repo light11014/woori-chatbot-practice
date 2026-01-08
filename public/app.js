@@ -97,6 +97,8 @@ function addBotMessage(result) {
   message.appendChild(keywords);
 
   chatMessages.appendChild(message);
+
+  chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
 const autoCompleteArea = document.querySelector(".auto-complete-container");
