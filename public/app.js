@@ -22,7 +22,8 @@ sendButton.addEventListener("click", async () => {
   addUserMessage(inputTextarea.value, "user");
   const result = await sendMessage(inputTextarea.value);
   console.log(result);
-  addBotMessage(result);
+  if (result != null) addBotMessage(result);
+  else addBotErrorMessage();
   inputTextarea.value = "";
 
   keywordEvent();
@@ -71,6 +72,22 @@ function addUserMessage(text) {
 
   message.appendChild(bubble);
   chatMessages.appendChild(message);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function addBotErrorMessage() {
+  const message = document.createElement("div");
+  message.className = "message bot";
+
+  const bubble = document.createElement("div");
+  bubble.className = "bubble";
+  bubble.classList.add("glass-card");
+  bubble.textContent = "답변 생성에 실패하였습니다.";
+
+  message.appendChild(bubble);
+
+  chatMessages.appendChild(message);
+
   chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 
